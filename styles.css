@@ -1,0 +1,172 @@
+/* General Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0a0a0a;
+    color: #fff;
+    min-height: 100vh;
+    background-image: repeating-linear-gradient(
+        45deg,
+        #111 0,
+        #111 10px,
+        #121212 10px,
+        #121212 20px
+    );
+    background-size: 20px 20px;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: transparent;
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    font-weight: 900;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    color: #7fffd4; /* Aquamarine accent */
+    cursor: default;
+    user-select: none;
+}
+
+/* Navigation styles */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #7fffd4;
+}
+
+/* Sign In button */
+.sign-in {
+    background-color: transparent;
+    border: 1.5px solid #7fffd4;
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 1rem;
+}
+
+.sign-in:hover {
+    background-color: #7fffd4;
+    color: #0a0a0a;
+}
+
+/* Main content styles */
+main {
+    padding: 60px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 5;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Headings */
+h1 {
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.4;
+    max-width: 700px;
+}
+
+h1 strong, h1 b {
+    font-weight: 700;
+}
+
+p {
+    font-size: 1rem;
+    max-width: 700px;
+    line-height: 1.5;
+    color: #ddd;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+/* Buttons About FinE and Career */
+.about-btn, .career-btn {
+    background-color: transparent;
+    border: 1.5px solid #222;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 140px;
+    transition: all 0.4s ease;
+    font-size: 1rem;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    user-select: none;
+}
+
+.about-btn:hover, .career-btn:hover {
+    border-color: #7fffd4;
+    box-shadow: 0 0 15px #7fffd4;
+    color: #7fffd4;
+    transform: scale(1.05);
+}
+
+/* Layout for buttons container */
+
+.financial-services {
+    color: #fff;
+    max-width: 700px;
+    line-height: 1.5;
+    margin-top: 40px;
+}
+
+.financial-services ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.financial-services ul li {
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.financial-services ul li strong {
+    font-weight: 700;
+}
+
+.financial-services p {
+    font-weight: 700;
+    margin-top: 25px;
+    font-size: 1rem;
+}
