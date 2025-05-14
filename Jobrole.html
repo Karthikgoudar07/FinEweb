@@ -1,0 +1,100 @@
+<!-- Document type declaration -->
+<!DOCTYPE html>
+<!-- Root element with language attribute -->
+<html lang="en">
+<head>
+    <!-- Character encoding -->
+    <meta charset="UTF-8" />
+    <!-- Viewport settings for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- Page title -->
+    <title>FinE</title>
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <!-- Header section containing logo, hamburger menu, and navigation -->
+    <header>
+          <!-- Logo container -->
+          <div class="logo">
+            <!-- Logo image -->
+            <img src="./img/FinE.svg" alt="FinE Logo" />
+          </div>
+        <!-- Navigation menu -->
+        <nav>
+            <ul>
+                <!-- Navigation links -->
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Company</a></li>
+                <li><a href="#">Blog</a></li>
+                <!-- Sign In button -->
+                <li><button class="sign-in">Sign In</button></li>
+            </ul>
+        </nav>
+    </header>
+<main>
+        <div class="container">
+            <!-- Left Column -->
+            <div class="job-details">
+                <a href="Jobopenings.html" class="back-link"><img src="./img/back.png" alt="back arrow"> back</a>
+                <div class="job-header">
+                    <p class="applying-text">you're applying for:</p>
+                    <h1>Funds Settlement</h1>
+                </div>
+                
+                <div class="job-section">
+                    <h2>what will you do?</h2>
+                    <ul>
+                        <li>assist in daily fund settlements, reconciliation, and reporting activities for trading transactions.</li>
+                        <li>process client fund receipts and payments, ensuring accurate posting and timely transaction recording.</li>
+                        <li>ensure strict compliance with sebi payout processes and regulatory reporting timelines.</li>
+                        <li>coordinate with internal teams like operations, accounts, and compliance for smooth fund movement and settlements.</li>
+                    </ul>
+                </div>
+                
+                <div class="job-section">
+                    <h2>you should apply if you have</h2>
+                    <ul>
+                        <li>minimum 2 years of experience in stock broking fund operations or settlements.</li>
+                        <li>familiarity with back-office systems like techexcel or equivalent fund management platforms.</li>
+                        <li>good communication and coordination skills for interacting with internal stakeholders and resolving discrepancies.</li>
+                        <li>high level of accuracy and attention to detail in handling financial transactions.</li>
+                        <li>strong analytical and problem-solving skills to manage exceptions and settlement issues.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="application-form">
+                <div class="tell-friend">
+                    <span>tell a friend</span>
+                    <img src="./img/Vector.png" alt="share icon" />
+                </div>
+                
+                <form id="job-application">
+                    <div class="form-group">
+                        <input type="text" id="fullname" placeholder="enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="enter your mail id">
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="mobile" placeholder="enter your mobile number">
+                    </div>
+                    <div class="form-group upload-btn">
+                        <label for="resume">
+                            <i class="fas fa-cloud-upload-alt"></i> upload your resume here
+                        </label>
+                        <input type="file" id="resume" hidden>
+                    </div>
+                    
+                    <p class="privacy-notice">
+                        by applying for this position, your data will be processed as per fine <a href="#">privacy policy</a>.
+                    </p>
+                    
+                    <button type="submit" class="apply-btn">APPLY FOR THIS ROLE</button>
+                </form>
+            </div>
+        </div>
+    </main>

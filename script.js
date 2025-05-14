@@ -1,13 +1,24 @@
-// Currently no complex JS needed as per the image
-// But adding subtle button focus animation for accessibility
 
-document.querySelectorAll('button').forEach(button => {
-    button.addEventListener('focus', () => {
-        button.style.boxShadow = '0 0 15px #7fffd4';
-        button.style.transform = 'scale(1.05)';
-    });
-    button.addEventListener('blur', () => {
-        button.style.boxShadow = '';
-        button.style.transform = '';
-    });
+document.querySelector('.career-btn').addEventListener('click', () => {
+    const careerSection = document.getElementById('career-section');
+    const aboutText = document.querySelector('.financial-services');
+    const introPara = document.querySelector('main > p');
+
+    // Toggle visibility
+    if (careerSection.style.display === 'none') {
+        careerSection.style.display = 'block';
+        aboutText.style.display = 'none';
+        introPara.style.display = 'none';
+    } else {
+        careerSection.style.display = 'none';
+        aboutText.style.display = 'block';
+        introPara.style.display = 'block';
+    }
+});
+// Run when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if we're on the Jobopenings page
+    if (window.location.pathname.includes('Jobopenings.html')) {
+        document.getElementById('opening-link').classList.add('active');
+    }
 });
