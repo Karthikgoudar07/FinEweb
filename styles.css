@@ -1,5 +1,6 @@
 /* General Reset and base styles */
 /* Reset margin and padding for all elements and set box-sizing to border-box */
+@import url('https://fonts.cdnfonts.com/css/neue-haas-grotesk-display-pro');
 * {
     margin: 0;
     padding: 0;
@@ -9,7 +10,7 @@
 /* Body styles */
 /* Set font family and background image with styling */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
     background-color: #0a0a0a;
    
 }
@@ -38,11 +39,15 @@ body::before {
     border: 2px solid #222;
     font-size: large;
     text-size-adjust: 100%;
+    text-align: center;
+    font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
 }
 .maindiv{
     margin-top: 60px;
     width: 25%;
     height: 60%;
+    font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+
 }
 .subdiv{
     display: flex;
@@ -51,6 +56,8 @@ body::before {
     color: white;
     margin-top: 7rem;
     text-align: left;
+        font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+
 }
 
 /* Header styles */
@@ -63,6 +70,8 @@ header {
     background: transparent;
     position: relative;
     z-index: 10;
+        font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+
 }
 
 /* Navigation styles */
@@ -72,8 +81,78 @@ nav ul {
     display: flex;
     gap: 30px;
     align-items: center;
+        font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+
 }
 
+.navbar {
+  position: fixed;
+    top: 20px;
+    left: -33px;
+    transform: translateX(10%);
+    width: 1200px;
+    height: 85px;
+    background-color: #0a0a0a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    z-index: 999;
+    border-radius: 20px;
+        font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+
+}
+ 
+/* Logo section */
+.logo {
+  display: flex;
+  align-items: center;
+}
+ 
+.logo img {
+  height: 32px;
+  margin-right: 0.5rem;
+}
+ 
+.logo span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+ 
+/* Menu links */
+.menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+ 
+.menu a {
+  color: #b3b3b3;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+ 
+.menu a:hover {
+  color: white;
+}
+ 
+/* Sign-in button */
+.sign-in-btn {
+  background-color: #2a2a2a;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.5rem;
+  color: #b3b3b3;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+ 
+.sign-in-btn:hover {
+  background-color: #3a3939;
+}
 /* Navigation link styles */
 /* Styling for links in navigation */
 nav ul li a {
@@ -84,29 +163,10 @@ nav ul li a {
     transition: color 0.3s ease;
 }
 
-/* Navigation link hover effect */
-/* Change link color on hover */
-nav ul li a:hover {
-    color: #7fffd4;
-}
 
 /* Sign In button styles */
 /* Transparent button with border and hover effects */
-.sign-in {
-    background-color: transparent;
-    color: #fff;
-    padding: 8px 18px;
-    border-radius: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    font-size: 1rem;
-}
-/* Sign In button hover effect */
-/* Change background and text color on hover */
-.sign-in:hover {
-    background-color: #7fffd4;
-    color: #0a0a0a;
-}
+
 
 /* Main content styles */
 /* Container with padding, max width, and positioning */
@@ -123,7 +183,7 @@ main {
 section {
     display: flex;
     flex-direction: row;
-    gap: 25px;
+    gap: 50px;
     margin-bottom: 30px;
 }
 
@@ -141,16 +201,28 @@ h1 {
 h1 strong, h1 b {
     font-weight: 700;
 }
-
+k{
+    font-size: 1rem;
+    max-width: 72%;
+    line-height: 1.5;
+    color: #FFFFFF;
+}
+j{
+    font-size: 1rem;
+    font-weight: bold;
+}
 /* Paragraph styles */
 /* Styling for paragraphs */
 p {
     font-size: 1rem;
     max-width: 72%;
     line-height: 1.5;
-    color: #ddd;
+    color: #10d298;
 }
-
+.query{
+    font-size: 1rem;
+    color: #10d298;
+}
 /* h2 styles */
 /* Styling for h2 headings */
 h2 {
@@ -167,9 +239,9 @@ h2 {
     border-radius: 20px;
     font-weight: 500;
     cursor: pointer;
-    width: 140px;
+    width: 287px;
     font-size: 1rem;
-    backdrop-filter: blur(6px);
+    height: 91px;
 }
 
 .career-btn {
@@ -180,9 +252,8 @@ h2 {
     border-radius: 20px;
     font-weight: 500;
     cursor: pointer;
-    width: 140px;
+    width: 287px;
     font-size: 1rem;
-    backdrop-filter: blur(6px);
     user-select: none;
     transition: all 0.3s ease;
 }
@@ -212,11 +283,7 @@ h2 {
 }
 /* Focus styles for buttons to enhance accessibility and visual feedback */
 /* Add box shadow and scale transform on focus */
-button:focus {
-    box-shadow: 0 0 15px #7fffd4;
-    transform: scale(1.05);
-    outline: none;
-}
+
 
 /* Career options styles */
 /* Flex container for career options */
@@ -327,11 +394,12 @@ button:focus {
 .haha{
     font-size: 1rem;
     font-weight: bolder;
+    color: #b3b3b3
 }
 /* Strong text in financial services list */
 /* Bold font weight */
 .financial-services ul li .haha {
-    font-weight: bolder;
+    font-weight:normal
 }
 
 /* Paragraph styles in financial services */
@@ -414,7 +482,7 @@ button:focus {
 }
 
 a {
-    color: white;
+    color: #b3b3b3;
     text-decoration: none;
 }
 
@@ -452,11 +520,6 @@ nav ul {
     background-color: rgba(255, 255, 255, 0.1);
     padding: 8px 20px;
     border-radius: 20px;
-    transition: background-color 0.3s;
-}
-
-.sign-in-btn:hover {
-    background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Main Layout */
@@ -637,6 +700,98 @@ input:checked + .slider:before {
     opacity: 0.9;
 }
 
+/* ───────────── Footer styling ───────────── */
+.site-footer{
+  background:#141414;           /* near-black */
+  color:#ecebeb;                /* medium grey text */
+  padding:60px 24px;
+  line-height:1.55;
+  margin-top: 193px
+}
+
+.site-footer .wrapper{
+  max-width:1200px;
+  margin: 0 150px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:90px;
+}
+
+/* ---- left (logo + info) ---- */
+.brand-block{flex:1 1 260px;}
+
+.brand{
+  font-size:32px;
+  color:#fff;
+}
+.brand svg{
+  width:28px;
+  height:32px;
+}
+.log{
+    width:100%;
+    height:auto;
+    max-width:200px;
+    margin-bottom:-20px;
+}
+.company-name{
+  font-size:14px;
+  font-weight:600;
+  color:#fff;
+  margin-bottom:28px;
+}
+
+.subtitle{font-size:13px; margin-bottom:6px;}
+address{font-style:normal; font-size:13px;}
+
+.phone{
+  display:inline-block;
+  margin-top:20px;
+  font-size:14px;
+  font-weight:600;
+  color:#8b8b8b;
+}
+.phone:hover{color:#fff;}
+
+/* ---- link columns ---- */
+.links{
+  flex:2 1 480px;
+  display:flex;
+  gap:80px;
+  flex-wrap:wrap;
+  margin-top: 40px;
+}
+.col.list::before{
+    color: gray;
+}
+.col h4{
+  color:#fff;
+  font-size:15px;
+  font-weight:600;
+  margin-bottom:12px;
+}
+.col ul{
+  list-style:none;
+    color: #0f0f0f;
+
+}
+.col li{
+  margin-bottom:8px;
+  color: #070707;
+}
+.col a:hover{
+  color:#fff;
+}
+.wrapper{
+    align-items: right;
+justify-content: right;}
+
+/* ---- responsive tweaks ---- */
+@media (max-width:768px){
+  .site-footer .wrapper{flex-direction:column; gap:40px;}
+  .links{gap:40px;}
+}
+
 
 /* Tablet view (Medium screens, e.g., tablets) */
 /* Media query for medium screens */
@@ -779,13 +934,8 @@ input:checked + .slider:before {
         text-align: left;
         padding: 10px 15px;
         border-radius: 8px;
-        transition: background-color 0.3s ease;
     }
 
-    nav ul li a:hover, nav ul li button.sign-in:hover {
-        background-color: #7fffd4;
-        color: #0a0a0a;
-    }
 
     main.nav-open {
         filter: blur(2px);
