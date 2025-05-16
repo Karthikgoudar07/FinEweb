@@ -1,5 +1,4 @@
 /* General Reset and base styles */
-/* Reset margin and padding for all elements and set box-sizing to border-box */
 @import url('https://fonts.cdnfonts.com/css/neue-haas-grotesk-display-pro');
 * {
     margin: 0;
@@ -7,13 +6,30 @@
     box-sizing: border-box;
 }
 
+/* Root variables for consistent sizing and easy updates */
+:root {
+    --primary-bg: #0a0a0a;
+    --secondary-bg: #141414;
+    --text-color: #ecebeb;
+    --muted-text: #8b8b8b;
+    --accent-color: #10d298;
+    --border-color: #222;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+}
+
 /* Body styles */
-/* Set font family and background image with styling */
 body {
     font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
-    background-color: #0a0a0a;
-   
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-x: hidden;
 }
+
 body::before {
     content: '';
     position: fixed;
@@ -21,157 +37,158 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.2; /* Adjust opacity for the overlay */
-    z-index: -1; /* Ensure it is behind the content */
+    opacity: 0.2;
+    z-index: -1;
     background-color: black;
-    background-image: url('./img/backgroundImg.png'); /* Replace with the actual path */
+    background-image: url('./img/backgroundImg.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
-.Searchbar{
-    margin-top: 60px;
-    width: 20.5rem;
+
+/* Responsive container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Searchbar */
+.Searchbar {
+    margin-top: clamp(1.5rem, 5vw, 3.75rem);
+    width: 100%;
+    max-width: 20.5rem;
     height: 4rem;
-    color: rgb(248, 246, 246);
+    color: #f8f6f6;
     background: black;
-    border: 2px solid #222;
-    font-size: large;
-    text-size-adjust: 100%;
+    border: 2px solid var(--border-color);
+    font-size: 1rem;
     text-align: center;
-    font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+    font-family: inherit;
 }
-.maindiv{
-    margin-top: 60px;
-    width: 25%;
-    height: 60%;
-    font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
 
+.maindiv {
+    margin-top: clamp(1.5rem, 5vw, 3.75rem);
+    width: 100%;
+    max-width: 25%;
 }
-.subdiv{
+
+.subdiv {
     display: flex;
+    flex-direction: column;
     background-color: rgba(0,0,0,0.6);
-    padding: 70px;
+    padding: clamp(1.5rem, 5vw, 4.375rem);
     color: white;
-    margin-top: 7rem;
+    margin-top: clamp(2rem, 7vw, 7rem);
     text-align: left;
-        font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
-
 }
 
 /* Header styles */
-/* Flex container for header with spacing and positioning */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
+    padding: clamp(0.75rem, 3vw, 1.25rem) clamp(1rem, 4vw, 2.5rem);
     background: transparent;
     position: relative;
     z-index: 10;
-        font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
-
 }
 
 /* Navigation styles */
-/* Unstyled list with flex layout and spacing */
 nav ul {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: clamp(0.75rem, 3vw, 1.875rem);
     align-items: center;
-        font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
-
+    flex-wrap: wrap;
 }
 
 .navbar {
-  position: fixed;
+    position: fixed;
     top: 20px;
-    left: -33px;
-    transform: translateX(10%);
-    width: 1200px;
-    height: 85px;
-    background-color: #0a0a0a;
+    left: 0;
+    right: 0;
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: auto;
+    min-height: 60px;
+    background-color: var(--primary-bg);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
+    padding: clamp(0.5rem, 2vw, 1rem) clamp(0.75rem, 3vw, 2rem);
     z-index: 999;
     border-radius: 20px;
-        font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
-
+    flex-wrap: wrap;
 }
- 
+
 /* Logo section */
 .logo {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
- 
+
 .logo img {
-  height: 32px;
-  margin-right: 0.5rem;
+    height: clamp(24px, 4vw, 32px);
+    margin-right: 0.5rem;
 }
- 
+
 .logo span {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
+    font-size: clamp(1.125rem, 4vw, 1.5rem);
+    font-weight: bold;
+    color: white;
 }
- 
+
 /* Menu links */
 .menu {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
+    display: flex;
+    gap: clamp(0.75rem, 3vw, 2rem);
+    align-items: center;
+    flex-wrap: wrap;
 }
- 
+
 .menu a {
-  color: #b3b3b3;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.3s ease;
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: clamp(0.875rem, 3vw, 1rem);
+    transition: color 0.3s ease;
 }
- 
+
 .menu a:hover {
-  color: white;
+    color: white;
 }
- 
+
 /* Sign-in button */
 .sign-in-btn {
-  background-color: #2a2a2a;
-  border: none;
-  border-radius: 8px;
-  padding: 0.5rem 1.5rem;
-  color: #b3b3b3;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    background-color: #2a2a2a;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.5rem;
+    color: #b3b3b3;
+    font-size: clamp(0.875rem, 3vw, 1rem);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
- 
+
 .sign-in-btn:hover {
-  background-color: #3a3939;
+    background-color: #3a3939;
 }
+
 /* Navigation link styles */
-/* Styling for links in navigation */
 nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    font-size: 1rem;
+    font-size: clamp(0.875rem, 3vw, 1rem);
     transition: color 0.3s ease;
 }
 
-
-/* Sign In button styles */
-/* Transparent button with border and hover effects */
-
-
 /* Main content styles */
-/* Container with padding, max width, and positioning */
 main {
-    padding: 40px 20px 60px;
+    padding: clamp(1.5rem, 5vw, 2.5rem) clamp(0.75rem, 3vw, 1.25rem) clamp(2rem, 6vw, 3.75rem);
     max-width: 900px;
     margin: 0 auto;
     position: relative;
@@ -179,142 +196,125 @@ main {
 }
 
 /* Section styles */
-/* Flex container with row direction and spacing */
 section {
     display: flex;
     flex-direction: row;
-    gap: 50px;
-    margin-bottom: 30px;
+    gap: clamp(1rem, 4vw, 3.125rem);
+    margin-bottom: clamp(1rem, 4vw, 1.875rem);
+    flex-wrap: wrap;
 }
 
 /* Headings styles */
-/* Styling for h1 */
 h1 {
     font-weight: 400;
-    font-size: 1.6rem;
+    font-size: clamp(1.25rem, 4vw, 1.6rem);
     line-height: 1.4;
     max-width: 700px;
 }
 
-/* Strong and bold inside h1 */
-/* Make text bold */
 h1 strong, h1 b {
     font-weight: 700;
 }
-k{
-    font-size: 1rem;
-    max-width: 72%;
+
+k {
+    font-size: clamp(0.875rem, 3vw, 1rem);
+    max-width: 100%;
     line-height: 1.5;
     color: #FFFFFF;
-}
-j{
-    font-size: 1rem;
-    font-weight: bold;
-}
-/* Paragraph styles */
-/* Styling for paragraphs */
-p {
-    font-size: 1rem;
-    max-width: 72%;
-    line-height: 1.5;
-    color: #10d298;
-}
-.query{
-    font-size: 1rem;
-    color: #10d298;
-}
-/* h2 styles */
-/* Styling for h2 headings */
-h2 {
-    font-weight: 700;
-    font-size: 1.2rem;
-    margin-top: 20px;
-}
-/* Transparent buttons with border, padding, and hover effects */
-.about-btn {
-    background-color: rgb(8, 8, 8);
-    border: 1.5px solid #222;
-    color: #fff;
-    padding: 12px 30px;
-    border-radius: 20px;
-    font-weight: 500;
-    cursor: pointer;
-    width: 287px;
-    font-size: 1rem;
-    height: 91px;
+    display: block;
 }
 
-.career-btn {
+j {
+    font-size: clamp(0.875rem, 3vw, 1rem);
+    font-weight: bold;
+    display: block;
+}
+
+/* Paragraph styles */
+p {
+    font-size: clamp(0.875rem, 3vw, 1rem);
+    max-width: 100%;
+    line-height: 1.5;
+    color: var(--accent-color);
+}
+
+.query {
+    font-size: clamp(0.875rem, 3vw, 1rem);
+    color: var(--accent-color);
+}
+
+/* h2 styles */
+h2 {
+    font-weight: 700;
+    font-size: clamp(1rem, 3.5vw, 1.2rem);
+    margin-top: clamp(1rem, 3vw, 1.25rem);
+}
+
+/* Button styles */
+.about-btn, .career-btn {
     background-color: rgb(8, 8, 8);
-    border: 1.5px solid #222;
+    border: 1.5px solid var(--border-color);
     color: #fff;
-    padding: 12px 30px;
+    padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 3vw, 1.875rem);
     border-radius: 20px;
     font-weight: 500;
     cursor: pointer;
-    width: 287px;
-    font-size: 1rem;
-    user-select: none;
+    width: 100%;
+    font-size: clamp(0.875rem, 3vw, 1rem);
+    height: auto;
+    min-height: 48px;
     transition: all 0.3s ease;
 }
 
 /* Hover effect for About and Career buttons */
-/* Change border color and scale on hover */
 .about-btn:hover, .career-btn:hover {
     background-color: #fdfcfc;
-    color: #0a0a0a;
+    color: var(--primary-bg);
     transform: scale(1.05);
-    cursor: pointer;
-    transition: all in 0.6s ease;
+    transition: all 0.6s ease;
 }
-/* Normal navigation link style */
+
+/* Navigation link style */
 .nav-link {
     color: #777;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-/* Active state for the link */
 .nav-link.active {
     color: white;
     font-weight: bold;
-    /* Optional: add an underline or other visual indicator */
     border-bottom: 2px solid white;
 }
-/* Focus styles for buttons to enhance accessibility and visual feedback */
-/* Add box shadow and scale transform on focus */
-
 
 /* Career options styles */
-/* Flex container for career options */
 .career-options {
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
-    max-width: 200px;
+    margin-top: clamp(0.5rem, 2vw, 0.625rem);
+    max-width: 100%;
 }
 
 /* Option button styles */
-/* Blue buttons with padding, border radius, and shadow */
 .option-btn {
     background-color: #007bff;
     border: none;
     border-radius: 8px;
     color: white;
     cursor: pointer;
-    margin: 6px 0;
-    padding: 12px;
-    font-size: 1rem;
+    margin: clamp(0.25rem, 1vw, 0.375rem) 0;
+    padding: clamp(0.5rem, 2vw, 0.75rem);
+    font-size: clamp(0.875rem, 3vw, 1rem);
     font-weight: 600;
     box-shadow: 0 2px 7px rgba(0, 123, 255, 0.5);
 }
 
 /* Career banner section styles */
-/* Centered flex container with background and shadow */
 .career-banner-section {
-    margin-top: 20px;
+    margin-top: clamp(1rem, 3vw, 1.25rem);
     text-align: center;
     max-width: 600px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     border-radius: 12px;
@@ -327,8 +327,6 @@ h2 {
     align-items: center;
 }
 
-/* Career banner image styles */
-/* Responsive image with rounded corners and border */
 .career-banner-section img {
     width: 100%;
     height: auto;
@@ -339,146 +337,145 @@ h2 {
     border-top-right-radius: 12px;
 }
 
-/* Career banner heading styles */
-/* Styled heading with color and padding */
 .career-banner-section h3 {
     color: #7fffd4;
     font-weight: 700;
-    font-size: 1.25rem;
-    padding: 15px 10px;
+    font-size: clamp(1rem, 3.5vw, 1.25rem);
+    padding: clamp(0.75rem, 2.5vw, 0.938rem) clamp(0.5rem, 2vw, 0.625rem);
     user-select: none;
     margin: 0;
 }
 
 /* Layout for financial services */
-/* Container with color, max width, and spacing */
 .financial-services {
     color: #fff;
     max-width: 900px;
+    width: 100%;
     line-height: 1.2;
-    margin-top: 40px;
+    margin-top: clamp(1.5rem, 5vw, 2.5rem);
 }
 
-/* Financial services list styles */
-/* Disc list with padding */
 .financial-services ul {
     list-style-type: disc;
-    padding-left: 20px;
+    padding-left: clamp(1rem, 3vw, 1.25rem);
 }
 
-/* Financial services list item styles */
-/* Spacing and font size for list items */
 .financial-services ul li {
-    margin-bottom: 20px;
-    font-size: 1rem;
-    width: 30rem;
-    
+    margin-bottom: clamp(1rem, 3vw, 1.25rem);
+    font-size: clamp(0.875rem, 3vw, 1rem);
+    width: 100%;
+    max-width: 30rem;
 }
-.platform-products{
-    font-size: 1rem;
+
+.platform-products {
+    font-size: clamp(0.875rem, 3vw, 1rem);
     font-weight: bolder;
     color: #fff;
+    margin: clamp(1.5rem, 5vw, 2.5rem) 0 clamp(1rem, 3vw, 1.25rem);
 }
-.Barr{
+
+.Barr {
     border: 2px solid white;
     border-top: 0;
     border-bottom: 0;
     color: white;
-    padding: 0 10px 0 10px;
-        font-weight: 500;
+    padding: 0 clamp(0.5rem, 2vw, 0.625rem);
+    font-weight: 500;
 }
+
 .white {
     color: white;
     font-weight: 500;
 }
-.haha{
-    font-size: 1rem;
+
+.haha {
+    font-size: clamp(0.875rem, 3vw, 1rem);
     font-weight: bolder;
-    color: #b3b3b3
-}
-/* Strong text in financial services list */
-/* Bold font weight */
-.financial-services ul li .haha {
-    font-weight:normal
+    color: #b3b3b3;
 }
 
-/* Paragraph styles in financial services */
-/* Bold font weight and margin */
+.financial-services ul li .haha {
+    font-weight: normal;
+}
+
 .financial-services p {
     font-weight: 700;
-    margin-top: 330px;
-    font-size: 1rem;
-    margin-left: -99%;
+    margin-top: clamp(10rem, 30vw, 20.625rem);
+    font-size: clamp(0.875rem, 3vw, 1rem);
+    margin-left: 0;
 }
 
+/* Card styles */
 .cards-container {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1000px;
-  margin: 0 auto;
-  gap: 20px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: clamp(0.75rem, 2.5vw, 1.25rem);
+    flex-wrap: wrap;
 }
 
 .card {
-  position: relative;
-  background-color: #070707;
-  border: 1px solid #3f3f3f;
-  padding: 30px;
-  width: 272px;
-  min-height: 220px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  margin-top: 85px;
+    position: relative;
+    background-color: #070707;
+    border: 1px solid #3f3f3f;
+    padding: clamp(1rem, 3vw, 1.875rem);
+    width: 100%;
+    max-width: 272px;
+    min-height: 220px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin-top: clamp(2rem, 6vw, 5.3125rem);
 }
 
 .card-header {
-  font-size: 0.8rem;
-  color: #777;
-  margin-bottom: 15px;
-  text-transform: uppercase;
+    font-size: clamp(0.75rem, 2.5vw, 0.8rem);
+    color: #777;
+    margin-bottom: clamp(0.75rem, 2.5vw, 0.938rem);
+    text-transform: uppercase;
 }
 
 .card-title {
-  font-size: 1.2rem;
-  margin-bottom: auto;
-  color: #ccc;
+    font-size: clamp(1rem, 3.5vw, 1.2rem);
+    margin-bottom: auto;
+    color: #ccc;
 }
 
 .card-footer {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-  font-size: 0.8rem;
-  color: #777;
+    display: flex;
+    justify-content: space-between;
+    margin-top: clamp(1rem, 3vw, 1.25rem);
+    font-size: clamp(0.75rem, 2.5vw, 0.8rem);
+    color: #777;
 }
 
 .view-more-overlay {
-  position: absolute;
-  bottom: -60px;
-  left: 0;
-  right: 0;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  background-color: white;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: bottom 0.3s ease;
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    right: 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: white;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: bottom 0.3s ease;
 }
 
 .view-more-btn {
-  background: none;
-  border: none;
-  color: #111;
-  cursor: pointer;
-  margin-top: 10px;
-    font-size: 1rem;
+    background: none;
+    border: none;
+    color: #111;
+    cursor: pointer;
+    margin-top: clamp(0.5rem, 2vw, 0.625rem);
+    font-size: clamp(0.875rem, 3vw, 1rem);
 }
 
 .card:hover .view-more-overlay {
-  bottom: 0;
+    bottom: 0;
 }
 
 a {
@@ -490,203 +487,76 @@ ul {
     list-style-type: none;
 }
 
-.container {
-    display: flex;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    min-height: calc(100vh - 150px);
-}
-
-/* Header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.logo img {
-    height: 32px;
-}
-
-nav ul {
-    display: flex;
-    gap: 30px;
-}
-
-.sign-in-btn {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 8px 20px;
-    border-radius: 20px;
-}
-
-/* Main Layout */
+//* Job application styles */
 .job-details {
     flex: 1;
-    padding-right: 40px;
+    padding-right: clamp(1rem, 3vw, 2.5rem);
     border-right: 1px solid var(--border-color);
 }
 
 .application-form {
     flex: 1;
-    padding-left: 40px;
+    padding-left: clamp(1rem, 3vw, 2.5rem);
 }
 
 /* Job Details Styling */
 .back-link {
     display: inline-block;
-    margin-bottom: 30px;
-    font-size: 0.9rem;
-    font-size: large;
-
+    margin-bottom: clamp(1.5rem, 4vw, 1.875rem);
+    font-size: clamp(0.875rem, 3vw, 1rem);
 }
 
 .job-header {
-    margin-bottom: 40px;
-    padding-bottom: 20px;
+    margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+    padding-bottom: clamp(1rem, 3vw, 1.25rem);
     border-bottom: 1px solid var(--border-color);
 }
 
 .applying-text {
-    font-size: 0.8rem;
+    font-size: clamp(0.75rem, 2.5vw, 0.8rem);
     opacity: 0.7;
     margin-bottom: 5px;
 }
 
-h1 {
-    font-size: 1.8rem;
-    font-weight: 500;
-    color: white;
-}
-
-.job-section {
-    margin-bottom: 40px;
-}
-
-h2 {
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin-bottom: 20px;
-    color: white;
-}
-
-.job-section ul li {
-    position: relative;
-    padding-left: 20px;
-    margin-bottom: 20px;
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.job-section ul li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: var(--text-color);
-}
-
-/* Application Form */
-.tell-friend {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 30px;
-    color: white;
-}
-
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 40px;
-    height: 20px;
-}
-
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-
-
-input:checked + .slider:before {
-    transform: translateX(20px);
-}
-
+/* Form elements */
 .form-group {
-    margin-bottom: 20px;
-    
+    margin-bottom: clamp(1rem, 3vw, 1.25rem);
 }
 
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group input[type="tel"] {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 337px;
-    padding: 15px;
+    width: 100%;
+    max-width: 337px;
+    padding: clamp(0.75rem, 2.5vw, 0.938rem);
     background-color: black;
-    border: 1px solid;
+    border: 1px solid gray;
     color: white;
-    height: 71px;
-    font-size: 0.9rem;
+    height: clamp(3rem, 10vw, 4.44rem);
+    font-size: clamp(0.825rem, 2.75vw, 0.9rem);
     border-radius: 10px;
-    border-color: gray;
-}
-
-.form-group input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-
 }
 
 .upload-btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 337px;
-    height: 71px;
-    border: 1px solid;
+    width: 100%;
+    max-width: 337px;
+    height: clamp(3rem, 10vw, 4.44rem);
+    border: 1px solid gray;
     border-radius: 5px;
-    border-color: gray;
     cursor: pointer;
-    transition: background-color 0.3s;
     background-color: black;
     color: rgb(95, 94, 94);
 }
 
-.upload-btn:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    
-}
-
-.upload-btn label {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 0.9rem;
-    
-}
-
-.privacy-notice {
-    font-size: 0.8rem;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    opacity: 0.7;
-}
-
-.privacy-notice a {
-    text-decoration: underline;
-}
-
 .apply-btn {
     display: block;
-    width: 337px;
-    padding: 15px;
+    width: 100%;
+    max-width: 337px;
+    padding: clamp(0.75rem, 2.5vw, 0.938rem);
     background-color: white;
     color: black;
     border: none;
@@ -696,268 +566,164 @@ input:checked + .slider:before {
     transition: opacity 0.3s;
 }
 
-.apply-btn:hover {
-    opacity: 0.9;
-}
-
 /* ───────────── Footer styling ───────────── */
-.site-footer{
-  background:#141414;           /* near-black */
-  color:#ecebeb;                /* medium grey text */
-  padding:60px 24px;
-  line-height:1.55;
-  margin-top: 193px
+.site-footer {
+  background: #141414;
+  color: #8b8b8b;
+  padding: 60px 24px;
+  line-height: 1.55;
+  margin-top: 193px;
 }
 
-.site-footer .wrapper{
-  max-width:1200px;
-  margin: 0 150px;
-  display:flex;
-  flex-wrap:wrap;
-  gap:90px;
+.site-footer .wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 /* ---- left (logo + info) ---- */
-.brand-block{flex:1 1 260px;}
-
-.brand{
-  font-size:32px;
-  color:#fff;
-}
-.brand svg{
-  width:28px;
-  height:32px;
-}
-.log{
-    width:100%;
-    height:auto;
-    max-width:200px;
-    margin-bottom:-20px;
-}
-.company-name{
-  font-size:14px;
-  font-weight:600;
-  color:#fff;
-  margin-bottom:28px;
+.brand-block {
+  flex: 0 1 50%;
+  max-width: 360px;
 }
 
-.subtitle{font-size:13px; margin-bottom:6px;}
-address{font-style:normal; font-size:13px;}
-
-.phone{
-  display:inline-block;
-  margin-top:20px;
-  font-size:14px;
-  font-weight:600;
-  color:#8b8b8b;
+.brand {
+  display: inline-block;
+  margin-bottom: 12px;
 }
-.phone:hover{color:#fff;}
+/* 
+.logo-img {
+  height: 35px;
+  width: auto;
+
+} */
+img {overflow-clip-margin: content-box;overflow: clip;}
+.company-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 28px;
+}
+
+.subtitle {
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #10d298;
+}
+
+.workhub {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+address {
+  font-style: normal;
+  font-size: 13px;
+  color: #8b8b8b;
+  max-width: 350px;
+  margin-bottom: 16px;
+}
+
+.query {
+  font-size: 14px;
+  color: #10d298;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.phone {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #8b8b8b;
+}
+
+.phone:hover {
+  color: #fff;
+}
 
 /* ---- link columns ---- */
-.links{
-  flex:2 1 480px;
-  display:flex;
-  gap:100px;
-  flex-wrap:wrap;
-  margin-top: 40px;
-}
-.col.list::before{
-    color: gray;
-}
-.col h4{
-  color:#fff;
-  font-size:15px;
-  font-weight:600;
-  margin-bottom:12px;
-}
-.col ul{
-  list-style:none;
-    color: #0f0f0f;
-
-}
-.col li{
-  margin-bottom:8px;
-  color: #070707;
-}
-.col a:hover{
-  color:#fff;
-}
-.wrapper{
-    align-items: right;
-justify-content: right;}
-
-/* ---- responsive tweaks ---- */
-@media (max-width:768px){
-  .site-footer .wrapper{flex-direction:column; gap:40px;}
-  .links{gap:40px;}
+.links {
+  flex: 0 1 50%;
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+  margin-top: 45px;
 }
 
-
-/* Tablet view (Medium screens, e.g., tablets) */
-/* Media query for medium screens */
-@media (min-width: 768px) and (max-width: 1024px) {
-    main {
-        padding: 30px 20px;
-    }
-
-    section {
-        flex-direction: row;
-    }
-
-    .about-btn, .career-btn {
-        width: 140px;
-    }
+.col h4 {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.col{
+  margin-right: -60px;
 }
 
-/* Mobile view (Small screens) */
-/* Mobile view (Small screens between 5.5" to 6.3") */
-/* Media query for small screens */
-@media (max-width: 767px) {
-    body {
-        font-size: 14px; /* Adjust font size for readability on small screens */
-    }
+.col ul {
+  list-style: none;
+  margin-right: 110px;
+  padding-left: 0px;
+}
 
-    main {
-        padding: 20px 15px;
-    }
+.col li {
+  margin-bottom: 8px;
+}
 
-    /* Adjust section layout to stack vertically on smaller screens */
-    section {
-        flex-direction: column;
-        gap: 15px;
-    }
+.col a {
+  color: #8b8b8b;
+  text-decoration: none;
+}
 
-    /* Adjust button width to ensure it fits nicely on smaller screens */
-    .about-btn, .career-btn {
-        width: 100%;
-        max-width: 280px;
-        font-size: 1.1rem; /* Slightly larger font size for readability */
-        padding: 10px 20px;
+.col a:hover {
+  color: #fff;
+}
 
-    }
+/* ---- responsive adjustments ---- */
+@media (max-width: 992px) {
+  .links {
+    gap: 40px;
+  }
+}
 
-    .career-options {
-        max-width: 100%;
-        margin-top: 10px;
-        text-align: center; /* Center align buttons for small screens */
-    }
+@media (max-width: 768px) {
+  .site-footer .wrapper {
+    flex-direction: column;
+  }
+  
+  .links {
+    margin-top: 40px;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  
+  .brand-block {
+    max-width: 100%;
+  }
+}
 
-    .option-btn {
-        width: 100%;
-        font-size: 1.1rem; /* Adjust button size for mobile */
-        padding: 12px;
-    }
+@media (max-width: 576px) {
+  .links {
+    flex-wrap: wrap;
+  }
+  
+  .col {
+    flex: 0 0 40%;
+  }
+}
 
-    .career-banner-section {
-        max-width: 100%;
-        margin-top: 15px;
-    }
-
-    /* Adjust font size and padding for headings and text */
-    h1 {
-        font-size: 1.4rem;
-        margin-bottom: 15px;
-    }
-
-    h2 {
-        font-size: 1.1rem;
-    }
-
-    p {
-        font-size: 1rem;
-        line-height: 1.2;
-        max-width: 900px;
-    }
-
-    /* Improve navigation for small mobile screens */
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 15px; /* Reduced padding for better fit */
-    }
-
-    .hamburger {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        width: 30px;
-        height: 25px;
-        margin-top: 10px;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-    }
-
-    .hamburger .bar {
-        width: 100%;
-        height: 3px;
-        background-color: #7fffd4;
-        border-radius: 2px;
-        transition: all 0.3s linear;
-    }
-
-    /* Mobile navigation adjustments */
-    nav {
-        position: fixed;
-        top: 60px;
-        left: 0;
-        right: 0;
-        background-color: rgba(0, 0, 0, 0.95);
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-in-out;
-        z-index: 1000;
-        border-radius: 0 0 10px 10px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    }
-
-    nav.open {
-        max-height: 400px;
-        padding: 15px 0;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 15px;
-        padding: 0 20px;
-        margin: 0;
-    }
-
-    nav ul li {
-        width: 100%;
-    }
-
-    nav ul li a, nav ul li button.sign-in {
-        font-size: 1.1rem; /* Adjust font size for mobile screens */
-        display: block;
-        width: 100%;
-        text-align: left;
-        padding: 10px 15px;
-        border-radius: 8px;
-    }
-
-
-    main.nav-open {
-        filter: blur(2px);
-        pointer-events: none;
-        user-select: none;
-    }
-
-    /* Adjust buttons to be easier to tap on smaller screens */
-    .about-btn, .career-btn, .option-btn {
-        font-size: 1.1rem; /* Larger font for better readability */
-        padding: 12px 25px;
-        border-radius: 15px;
-    }
-
-    /* Remove unnecessary margin for smaller screens */
-    .career-banner-section h3 {
-        font-size: 1.1rem;
-        padding: 12px 10px;
-    }
-
-    /* Adjust content padding for better spacing */
-    .financial-services {
-        padding: 15px;
-    }
+@media (max-width: 480px) {
+  .links {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .col {
+    width: 100%;
+  }
 }
